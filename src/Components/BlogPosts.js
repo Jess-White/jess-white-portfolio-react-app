@@ -20,7 +20,7 @@ class BlogPosts extends Component {
   render() {
     return (
       <div className="column">
-      <h1 className="sub-header">Today I Blogged</h1>
+      <h1 className="jumbotron-major">Today I Blogged</h1>
         {this.state.blog_posts.map((blog_post) => {
           return (
             <div className="jumbotron">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 class PortfolioProjects extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class PortfolioProjects extends Component {
   render() {
     return (
       <div className="column">
-        <h1 className="sub-header">Portfolio Projects:</h1>
+        <h1 className="jumbotron-major">Portfolio Projects:</h1>
         {this.state.portfolio_projects.map((portfolio_project) => {
           return (
             <div className="jumbotron">
@@ -35,9 +36,17 @@ class PortfolioProjects extends Component {
             <h4>
               {portfolio_project.project_summary}
             </h4>
-            <Button className="header-button" href={`${portfolio_project.project_github_url_frontend}`}><i className="fa fa-2x fa-github-square" aria-hidden="true"></i></Button>
-            <Button className="header-button" href={`${portfolio_project.project_github_url_backend}`}><i className="fa fa-2x fa-github-square" aria-hidden="true"></i></Button>
-            <Button className="header-button" href={`${portfolio_project.project_deploy_link}`}><i className="fa fa-2x fa-server" aria-hidden="true"></i></Button>  
+            <ButtonGroup>
+            {portfolio_project.project_github_url_frontend ? 
+            <Button className="repo-button" href={`${portfolio_project.project_github_url_frontend}`}>Frontend</Button>
+            : null}
+            {portfolio_project.project_github_url_backend ?  
+            <Button className="repo-button" href={`${portfolio_project.project_github_url_backend}`}>Backend</Button>
+            : null}
+            {portfolio_project.project_deploy_link ? 
+            <Button className="repo-button" href={`${portfolio_project.project_deploy_link}`}>Deployed</Button>
+            : null}
+            </ButtonGroup>
           </div>
           </div>
           <div className="card">

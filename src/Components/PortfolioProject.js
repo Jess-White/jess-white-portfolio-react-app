@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 class PortfolioProject extends Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class PortfolioProject extends Component {
       project_image_url: "",
       project_video_link: "",
       project_github_link: "",
+      project_github_url_frontend: "",
+      project_github_url_backend: "",
       project_deploy_link: ""
     }
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +35,8 @@ class PortfolioProject extends Component {
           project_image_url: response.data.project_image_url,
           project_video_link: response.data.project_video_link,
           project_github_link: response.data.project_github_link,
+          project_github_url_frontend: response.data.project_github_url_frontend,
+          project_github_url_backend: response.data.project_github_url_backend,
           project_deploy_link: response.data.project_deploy_link,
           loading: false
         });
@@ -49,7 +54,7 @@ class PortfolioProject extends Component {
   }
 
   handleSubmit(event) {
-    const { project_title, project_summary, language, project_image_url, project_video_link, project_github_link, project_deploy_link } = this.state;
+    const { project_title, project_summary, language, project_image_url, project_video_link, project_github_link, project_github_url_frontend, project_github_url_backend, project_deploy_link } = this.state;
     axios
       .patch(
         'http://localhost:3000/api/portfolio_projects/' + this.state.id,
@@ -59,8 +64,12 @@ class PortfolioProject extends Component {
           project_summary: project_summary,
           project_image_url: project_image_url,
           project_video_link: project_video_link,
+          project_github_url_frontend: project_github_url_frontend,
+          project_github_url_backend: project_github_url_backend,
           project_github_link: project_github_link,
           project_deploy_link: project_deploy_link
+
+
         }
       )
       .catch(error => {
@@ -104,10 +113,18 @@ class PortfolioProject extends Component {
             <h2>{this.state.language}</h2>
             <h4>
               {this.state.project_summary}
-            </h4>
-            <Button className="header-button" href={`${this.state.project_github_url_frontend}`}><i className="fa fa-2x fa-github-square" aria-hidden="true"></i></Button>
-            <Button className="header-button" href={`${this.state.project_github_url_backend}`}><i className="fa fa-2x fa-github-square" aria-hidden="true"></i></Button>
-            <Button className="header-button" href={`${this.state.project_deploy_link}`}><i className="fa fa-2x fa-server" aria-hidden="true"></i></Button>  
+            </h4> 
+            <ButtonGroup>
+            {this.state.project_github_url_frontend ? 
+            <Button className="repo-button" href={`${this.state.project_github_url_frontend}`}>Frontend</Button>
+            : null}
+            {this.state.project_github_url_backend ?  
+            <Button className="repo-button" href={`${this.state.project_github_url_backend}`}>Backend</Button>
+            : null}
+            {this.state.project_deploy_link ? 
+            <Button className="repo-button" href={`${this.state.project_deploy_link}`}>Deployed</Button> 
+            : null}
+            </ButtonGroup>
           </div>
           </div>
           <div className="card">

@@ -159,6 +159,22 @@ h1, h2, p {
 /*  box-shadow: inset 0px 3px 3px hsla(180, 100%, 50%, 0.9);*/
 }
 
+.repo-button {
+  opacity: .5;
+  margin: 10px;
+  width: 100%;
+
+  vertical-align: middle;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10%;
+  background: #00003f;
+  color: #000058;
+/*  box-shadow: inset 0px 3px 3px hsla(180, 100%, 50%, 0.9);*/
+}
+
 .header-button:hover {
   text-decoration: none;
   
