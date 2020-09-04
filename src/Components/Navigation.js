@@ -23,10 +23,10 @@ class Navigation extends Component {
         <nav className="navbar navbar-expand-lg navbar-light" >
             <div className="row">
               <div className="col">
+              <NavLink style={{ color: "#add8e6" }} className="navbar-brand" to="/home">Home</NavLink>
               <NavLink style={{ color: "#add8e6" }} className="navbar-brand" to="/portfolio_projects">Portfolio</NavLink>
               <NavLink style={{ color: "#add8e6" }} className="navbar-brand" to="/bio">Bio</NavLink>
               <NavLink style={{ color: "#add8e6" }} className="navbar-brand" to="/blog_posts">Blog</NavLink>
-              <NavLink style={{ color: "#add8e6" }} className="navbar-brand" to="/home">Home</NavLink>
               </div>
               {!localStorage.token || !localStorage.user_id ? null :
               <div className="col">

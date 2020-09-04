@@ -17,7 +17,7 @@ class BlogPost extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    axios.get(`http://localhost:3000/api/blog_posts/${this.props.match.params.id}`)
+    axios.get(`/api/blog_posts/${this.props.match.params.id}`)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -45,7 +45,7 @@ class BlogPost extends Component {
     const { post_title, post_content, post_image_url, blurb } = this.state;
     axios
       .patch(
-        'http://localhost:3000/api/blog_posts/' + this.state.id,
+        '/api/blog_posts/' + this.state.id,
         {
           post_title: post_title,
           post_content: post_content,
@@ -62,7 +62,7 @@ class BlogPost extends Component {
   handlePostDelete() {
     axios
       .delete(
-        'http://localhost:3000/api/blog_posts/' + this.state.id,
+        '/api/blog_posts/' + this.state.id,
         { headers: { "Authorization": `Bearer ${localStorage.token}` } }
       )
       .then(response => {

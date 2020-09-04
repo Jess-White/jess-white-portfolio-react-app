@@ -12,7 +12,7 @@ class PortfolioProjects extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:3000/api/portfolio_projects')
+    axios.get('/api/portfolio_projects')
       .then(response => {
         console.log(response)
         this.setState({ portfolio_projects: response.data })
@@ -22,7 +22,7 @@ class PortfolioProjects extends Component {
   render() {
     return (
       <div className="column">
-        <h1 className="jumbotron-major">Portfolio Projects:</h1>
+        <h1 className="jumbotron-major">Portfolio Projects</h1>
         {this.state.portfolio_projects.map((portfolio_project) => {
           return (
             <div className="jumbotron">

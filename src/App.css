@@ -4,6 +4,10 @@ body{
   text-align: center;
 }
 
+.row-headshot {
+  flex-wrap: nowrap;
+}
+
 .jumbotron {
   background: #003e5d;
   border-radius: 0%;
@@ -18,8 +22,8 @@ h4 {
 /*  top: 0;*/
   border-radius: 0;
   border: 70px solid rgb(36,37,55);
-  width: 110%;
-  height: 100%;
+  width: 100%;
+  height: 90%;
   opacity: .85;
 }
 
@@ -58,12 +62,11 @@ h4 {
   color: #add8e6;
   font-size: 600%;
   margin-bottom: 5%;
+  margin-top: 5%;
   text-align: center;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  margin-bottom: 5%;
   letter-spacing: -2px;
   word-spacing: -2px;
-
 }
 
 footer {
@@ -85,12 +88,10 @@ h1, h2, p {
   display: none;
   padding-top: 10%;
   padding-bottom: 30%;
-  margin-top: 5%;
   margin-bottom: 5%;
 }
 
 .about-para {
-  margin-top: 10%;
   margin-bottom: 20%;
   padding-bottom: 5%;
   padding-top: 5%;
@@ -277,12 +278,79 @@ textarea {
 }
 
 @media only screen and (max-width: 760px) {
+
+  .row-headshot {
+    flex-wrap: wrap;
+  }
+
   .jumbotron img {
     border-radius: 0;
-    border: 20px solid black;
-    width: 550px;
-    height: 550px;
+    border: 20px solid rgb(36,37,55);
+    width: 75%;
+    height: 82%;
+    opacity: .85;
   }
+
+  .jumbotron h1 {
+  color: #add8e6;
+  text-align: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-bottom: 3%;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-size: 20px;
+  }
+
+  .jumbotron h2, h3, h4 {
+    color: #add8e6;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12px;
+  }
+
+  .jumbotron a {
+    color: #add8e6;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .jumbotron-major {
+    color: #add8e6;
+    font-size: 400%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    letter-spacing: -2px;
+    word-spacing: -2px;
+    font-size: 48px;
+  }
+
+  .column-2 {
+  margin-left: 0%;
+}
+
+.header-button {
+  opacity: .5;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-radius: 10%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  margin-top: 0%;
+
+  background: #08a0d3;
+  color: #242537;
+/*  box-shadow: inset 0px 3px 3px hsla(180, 100%, 50%, 0.9);*/
+}
+
 }
 
 .sub-header {

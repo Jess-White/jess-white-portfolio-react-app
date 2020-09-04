@@ -19,7 +19,7 @@ class BlogPostNew extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/tags')
+    axios.get('/api/tags')
       .then(response => {
         console.log(response)
         this.setState({ tags: response.data })
@@ -49,7 +49,7 @@ class BlogPostNew extends Component {
 
     axios
       .post(
-        "http://localhost:3000/api/blog_posts",
+        "/api/blog_posts",
         {
           post_title: post_title,
           post_content: post_content,

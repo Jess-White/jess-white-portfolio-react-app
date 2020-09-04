@@ -6,6 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './App.css';
 import Header from './Components/Header';
+import Home from './Components/Home';
 import Footer from './Components/Footer';
 import PortfolioProjects from './Components/PortfolioProjects';
 import Login from './Components/Login';
@@ -22,7 +23,6 @@ function App() {
     <div className="App">
       <HashRouter>
         <Navigation/>
-        <Header />
         <Switch>
           <Route
             exact path={"/login"} component={Login}
@@ -47,6 +47,12 @@ function App() {
             />
           <Route
               exact path={"/bio"} component={Bio}
+            />
+          <Route
+              exact path={"/home"} component={Home}
+            />
+          <Route
+              exact path={"/"} component={Home}
             />
         </Switch>
       </HashRouter>

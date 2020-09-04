@@ -24,7 +24,7 @@ class PortfolioProject extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    axios.get(`http://localhost:3000/api/portfolio_projects/${this.props.match.params.id}`)
+    axios.get(`/api/portfolio_projects/${this.props.match.params.id}`)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -57,7 +57,7 @@ class PortfolioProject extends Component {
     const { project_title, project_summary, language, project_image_url, project_video_link, project_github_link, project_github_url_frontend, project_github_url_backend, project_deploy_link } = this.state;
     axios
       .patch(
-        'http://localhost:3000/api/portfolio_projects/' + this.state.id,
+        '/api/portfolio_projects/' + this.state.id,
         {
           project_title: project_title,
           language: language,
@@ -81,7 +81,7 @@ class PortfolioProject extends Component {
   handleProjectDelete() {
     axios
       .delete(
-        'http://localhost:3000/api/portfolio_projects/' + this.state.id,
+        '/api/portfolio_projects/' + this.state.id,
         { headers: { "Authorization": `Bearer ${localStorage.token}` } }
       )
       .then(response => {

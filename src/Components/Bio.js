@@ -5,11 +5,10 @@ function Bio() {
   return (
     <div>
       <div id="about-element">
+      <h1 className="jumbotron-major">
+            How I Got Here</h1>
         <div className="jumbotron-about" background-size="cover">
           <div className="row about-para">
-            
-            <h1 className="about-header">
-            How I Got Here</h1>
             <h3 className="about-text">
 I'm a Chicago-based developer working in React, Ruby/Rails, JavaScript, VueJS, PostgreSQL, and HTML/CSS/Bootstrap. 
 </h3>

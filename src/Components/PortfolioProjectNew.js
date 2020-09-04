@@ -31,7 +31,7 @@ class PortfolioProjectNew extends Component {
 
     axios
       .post(
-        "http://localhost:3000/api/portfolio_projects",
+        "/api/portfolio_projects",
         {
           project_title: project_title,
           project_summary: project_summary,
